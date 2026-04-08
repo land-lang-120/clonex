@@ -32,6 +32,31 @@
   --radius:16px;
 }
 
+/* ── MODE CLAIR ── */
+body.light{
+  --bg:#f5f5f8;
+  --bg2:#eeeef2;
+  --surface:#ffffff;
+  --border:#d8d8e0;
+  --text:#1a1a2e;
+  --text2:#6b6b80;
+  --accent:#7c3aed;
+  --accent2:#9333ea;
+  --accent-glow:rgba(124,58,237,.12);
+  --green:#16a34a;
+  --orange:#ea580c;
+  --cyan:#0891b2;
+  --pink:#db2777;
+  --gold:#d97706;
+}
+body.light nav{background:rgba(245,245,248,.9)}
+body.light .app-thumb.tetroid{background:linear-gradient(135deg,#c4b5fd,#a78bfa)}
+body.light .app-thumb.blockblast{background:linear-gradient(135deg,#bfdbfe,#93c5fd)}
+body.light .app-thumb.bounce{background:linear-gradient(135deg,#a7f3d0,#6ee7b7)}
+body.light .app-thumb.pharmadroid{background:linear-gradient(135deg,#c7d2fe,#a5b4fc)}
+body.light .app-thumb.sequoia{background:linear-gradient(135deg,#e7e5e4,#d6d3d1)}
+body.light .app-thumb.dailynote{background:linear-gradient(135deg,#fef3c7,#fde68a);color:#78350f}
+
 html{scroll-behavior:smooth}
 body{
   font-family:'Inter',system-ui,sans-serif;
@@ -64,6 +89,16 @@ nav{
   transition:color .2s;
 }
 .nav-links a:hover{color:var(--text)}
+.theme-toggle{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--surface);border:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:1.1rem;
+  transition:transform .15s,background .2s;
+  flex-shrink:0;
+}
+.theme-toggle:hover{transform:scale(1.1)}
+.theme-toggle:active{transform:scale(.95)}
 
 /* ── HERO ── */
 .hero{
@@ -252,11 +287,14 @@ footer a{color:var(--accent2);text-decoration:none}
 <!-- NAV -->
 <nav>
   <div class="logo">CloneX <span>STUDIO</span></div>
-  <ul class="nav-links">
-    <li><a href="#apps">Nos Apps</a></li>
-    <li><a href="#about">A propos</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <div style="display:flex;align-items:center;gap:20px">
+    <ul class="nav-links">
+      <li><a href="#apps">Nos Apps</a></li>
+      <li><a href="#about">A propos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Changer de theme">🌙</button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -423,5 +461,22 @@ footer a{color:var(--accent2);text-decoration:none}
   </p>
 </footer>
 
+<script>
+// ── Theme toggle (clair/sombre) ──
+(function(){
+  const btn = document.getElementById('theme-toggle');
+  const saved = localStorage.getItem('clonex_theme');
+  if(saved === 'light'){
+    document.body.classList.add('light');
+    btn.textContent = '☀️';
+  }
+  btn.addEventListener('click', ()=>{
+    document.body.classList.toggle('light');
+    const isLight = document.body.classList.contains('light');
+    btn.textContent = isLight ? '☀️' : '🌙';
+    localStorage.setItem('clonex_theme', isLight ? 'light' : 'dark');
+  });
+})();
+</script>
 </body>
 </html>
