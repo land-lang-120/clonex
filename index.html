@@ -344,7 +344,7 @@ footer a{color:var(--accent2);text-decoration:none}
         <div class="app-desc">Le Tetris nouvelle generation. 4 boosters devastateurs, classement mondial, roue de la fortune et 12 langues. Deviendras-tu Divin ?</div>
         <div class="app-actions">
           <a href="tetroid.html" class="btn btn-primary">▶ Jouer</a>
-          <a href="tetroid.html" class="btn btn-outline">📲 Installer (PWA)</a>
+          <button class="btn btn-outline" onclick="installApp('tetroid.html')">📲 Installer</button>
         </div>
       </div>
     </div>
@@ -461,7 +461,62 @@ footer a{color:var(--accent2);text-decoration:none}
   </p>
 </footer>
 
+<div id="cx-toast" style="
+  position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);
+  background:var(--surface);border:1px solid var(--border);
+  color:var(--text);padding:12px 24px;border-radius:50px;
+  font-size:.85rem;font-weight:600;z-index:200;
+  box-shadow:0 8px 32px rgba(0,0,0,.3);
+  transition:transform .3s ease,opacity .3s ease;opacity:0;pointer-events:none;
+"></div>
+
 <script>
+// ── Toast notification ──
+function showCxToast(msg, duration=3500){
+  const t = document.getElementById('cx-toast');
+  t.textContent = msg;
+  t.style.transform = 'translateX(-50%) translateY(0)';
+  t.style.opacity = '1';
+  clearTimeout(t._tid);
+  t._tid = setTimeout(()=>{
+    t.style.transform = 'translateX(-50%) translateY(80px)';
+    t.style.opacity = '0';
+  }, duration);
+}
+
+// ── PWA Install ──
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+});
+
+function installApp(url){
+  if(deferredPrompt){
+    // Le navigateur supporte l'installation PWA
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(result => {
+      if(result.outcome === 'accepted'){
+        showCxToast('✅ Installation lancee !');
+      }
+      deferredPrompt = null;
+    });
+  } else {
+    // Fallback : instructions manuelles
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isAndroid = /Android/.test(navigator.userAgent);
+    if(isIOS){
+      showCxToast('📲 Ouvre ' + url + ' dans Safari, puis : Partager → Sur l\'ecran d\'accueil', 5000);
+    } else if(isAndroid){
+      showCxToast('📲 Ouvre ' + url + ' dans Chrome, puis : Menu ⋮ → Installer l\'application', 5000);
+    } else {
+      showCxToast('📲 Ouvre ' + url + ' dans Chrome, puis clique l\'icone d\'installation dans la barre d\'adresse', 5000);
+    }
+    // Ouvrir la page pour qu'ils puissent installer depuis la
+    window.open(url, '_blank');
+  }
+}
+
 // ── Theme toggle (clair/sombre) ──
 (function(){
   const btn = document.getElementById('theme-toggle');
