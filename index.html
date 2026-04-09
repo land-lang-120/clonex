@@ -344,7 +344,7 @@ footer a{color:var(--accent2);text-decoration:none}
         <div class="app-desc">Le Tetris nouvelle generation. 4 boosters devastateurs, classement mondial, roue de la fortune et 12 langues. Deviendras-tu Divin ?</div>
         <div class="app-actions">
           <a href="tetroid.html" class="btn btn-primary">▶ Jouer</a>
-          <button class="btn btn-outline" onclick="installApp('tetroid.html')">📲 Installer</button>
+          <a href="tetroid.html?install=1" class="btn btn-outline">Telecharger</a>
         </div>
       </div>
     </div>
@@ -361,7 +361,7 @@ footer a{color:var(--accent2);text-decoration:none}
         <div class="app-desc">Un puzzle de blocs explosif ou chaque placement compte. Enchaine les combos et grimpe dans le classement.</div>
         <div class="app-actions">
           <a href="block-blast-royal.html" class="btn btn-primary">▶ Jouer</a>
-          <a href="#" class="btn btn-outline btn-disabled">📲 Bientot</a>
+          <a href="#" class="btn btn-outline btn-disabled">Bientot</a>
         </div>
       </div>
     </div>
@@ -378,7 +378,7 @@ footer a{color:var(--accent2);text-decoration:none}
         <div class="app-desc">Fais rebondir la balle a travers des niveaux de plus en plus complexes. Reflexes et precision sont tes meilleurs allies.</div>
         <div class="app-actions">
           <a href="bounce-v4.html" class="btn btn-primary">▶ Jouer</a>
-          <a href="#" class="btn btn-outline btn-disabled">📲 Bientot</a>
+          <a href="#" class="btn btn-outline btn-disabled">Bientot</a>
         </div>
       </div>
     </div>
@@ -395,7 +395,7 @@ footer a{color:var(--accent2);text-decoration:none}
         <div class="app-desc">Ton assistant pharmacie intelligent. Recherche de medicaments, interactions, posologies et alertes personnalisees.</div>
         <div class="app-actions">
           <a href="pharmadroid.html" class="btn btn-primary">▶ Ouvrir</a>
-          <a href="#" class="btn btn-outline btn-disabled">📲 Bientot</a>
+          <a href="#" class="btn btn-outline btn-disabled">Bientot</a>
         </div>
       </div>
     </div>
@@ -412,7 +412,7 @@ footer a{color:var(--accent2);text-decoration:none}
         <div class="app-desc">Une application pensee pour t'aider a organiser, planifier et atteindre tes objectifs au quotidien.</div>
         <div class="app-actions">
           <a href="sequoia.html" class="btn btn-primary">▶ Ouvrir</a>
-          <a href="#" class="btn btn-outline btn-disabled">📲 Bientot</a>
+          <a href="#" class="btn btn-outline btn-disabled">Bientot</a>
         </div>
       </div>
     </div>
@@ -429,7 +429,7 @@ footer a{color:var(--accent2);text-decoration:none}
         <div class="app-desc">Capture tes pensees, idees et to-do lists chaque jour. Simple, rapide, elegant — un journal quotidien numerique.</div>
         <div class="app-actions">
           <a href="#" class="btn btn-primary btn-disabled">▶ Bientot</a>
-          <a href="#" class="btn btn-outline btn-disabled">📲 Bientot</a>
+          <a href="#" class="btn btn-outline btn-disabled">Bientot</a>
         </div>
       </div>
     </div>
@@ -492,29 +492,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 function installApp(url){
-  if(deferredPrompt){
-    // Le navigateur supporte l'installation PWA
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(result => {
-      if(result.outcome === 'accepted'){
-        showCxToast('✅ Installation lancee !');
-      }
-      deferredPrompt = null;
-    });
-  } else {
-    // Fallback : instructions manuelles
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    const isAndroid = /Android/.test(navigator.userAgent);
-    if(isIOS){
-      showCxToast('📲 Ouvre ' + url + ' dans Safari, puis : Partager → Sur l\'ecran d\'accueil', 5000);
-    } else if(isAndroid){
-      showCxToast('📲 Ouvre ' + url + ' dans Chrome, puis : Menu ⋮ → Installer l\'application', 5000);
-    } else {
-      showCxToast('📲 Ouvre ' + url + ' dans Chrome, puis clique l\'icone d\'installation dans la barre d\'adresse', 5000);
-    }
-    // Ouvrir la page pour qu'ils puissent installer depuis la
-    window.open(url, '_blank');
-  }
+  // Ouvrir la page de l'app avec le flag install=1
+  // L'app detectera ce flag et declenchera le prompt d'installation
+  window.location.href = url + '?install=1';
 }
 
 // ── Theme toggle (clair/sombre) ──
