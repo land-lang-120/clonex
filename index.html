@@ -57,6 +57,7 @@ body.light .app-thumb.pharmadroid{background:linear-gradient(135deg,#c7d2fe,#a5b
 body.light .app-thumb.byer{background:linear-gradient(135deg,#fecaca,#fca5a5)}
 body.light .app-thumb.sequoia{background:linear-gradient(135deg,#e7e5e4,#d6d3d1)}
 body.light .app-thumb.secretnote{background:linear-gradient(135deg,#e5e5e5,#d4d4d4)}
+body.light .app-thumb.snakelab{background:linear-gradient(135deg,#a5f3fc,#c4b5fd)}
 body.light .app-thumb.dailynote{background:linear-gradient(135deg,#fef3c7,#fde68a);color:#78350f}
 
 html{scroll-behavior:smooth}
@@ -311,7 +312,7 @@ footer a{color:var(--accent2);text-decoration:none}
 <!-- STATS -->
 <section class="stats">
   <div class="stat">
-    <div class="stat-num">8</div>
+    <div class="stat-num">9</div>
     <div class="stat-label">Applications</div>
   </div>
   <div class="stat">
@@ -382,6 +383,29 @@ footer a{color:var(--accent2);text-decoration:none}
         <div class="app-actions">
           <a href="https://bounce-labyrinth.netlify.app/" class="btn btn-primary">▶ Jouer</a>
           <a href="https://bounce-labyrinth.netlify.app/" class="btn btn-outline" onclick="installApp('Bounce Labyrinth');return false;">Telecharger</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SNAKE LABYRINTH -->
+    <div class="app-card">
+      <div class="app-thumb snakelab" style="background:linear-gradient(135deg,#05060A,#0A0E1A)">
+        <span class="app-badge badge-live">En ligne</span>
+        <svg width="60" height="60" viewBox="0 0 100 100" fill="none" style="filter:drop-shadow(0 0 8px rgba(0,240,255,0.6))">
+          <rect x="8" y="8" width="84" height="84" rx="14" fill="none" stroke="#00F0FF" stroke-width="2" opacity="0.8"/>
+          <path d="M 24 24 L 24 50 L 40 50 L 40 32 L 60 32 L 60 50 L 76 50 L 76 24 M 24 60 L 40 60 L 40 76 L 60 76 L 60 60 L 76 60" stroke="#00F0FF" stroke-width="2" fill="none" opacity="0.5" stroke-linecap="round"/>
+          <path d="M 30 42 Q 30 36 36 36 Q 42 36 42 42 Q 42 48 48 48 Q 54 48 54 54 Q 54 60 60 60 Q 66 60 66 54" stroke="#FF2EB5" stroke-width="5" fill="none" stroke-linecap="round" style="filter:drop-shadow(0 0 4px rgba(255,46,181,0.7))"/>
+          <circle cx="66" cy="54" r="3.5" fill="#FFFFFF"/>
+          <circle cx="30" cy="42" r="3" fill="#FFD93D"/>
+        </svg>
+      </div>
+      <div class="app-body">
+        <div class="app-cat">Jeu Arcade / Puzzle</div>
+        <div class="app-name">Snake Labyrinth</div>
+        <div class="app-desc">Labyrinthes neon cyberpunk infinis. 2 modes (Quete + Survie), 6 boosters, 8 skins deblocables, classement mondial. Rampe. Survis. Domine.</div>
+        <div class="app-actions">
+          <a href="https://land-lang-120.github.io/snake-labyrinth/" class="btn btn-primary">▶ Jouer</a>
+          <a href="https://land-lang-120.github.io/snake-labyrinth/" class="btn btn-outline" onclick="installApp('Snake Labyrinth');return false;">Telecharger</a>
         </div>
       </div>
     </div>
