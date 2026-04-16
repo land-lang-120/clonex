@@ -446,17 +446,23 @@ footer a{color:var(--accent2);text-decoration:none}
 
     <!-- PHARMADROID -->
     <div class="app-card">
-      <div class="app-thumb pharmadroid">
-        <span class="app-badge badge-soon">Bientot</span>
-        💊
+      <div class="app-thumb pharmadroid" style="background:linear-gradient(135deg,#007A4D,#00A86B)">
+        <span class="app-badge badge-live">En ligne</span>
+        <svg width="54" height="54" viewBox="0 0 100 100" fill="none">
+          <rect x="10" y="10" width="80" height="80" rx="22" fill="white" opacity="0.95"/>
+          <rect x="43" y="26" width="14" height="48" rx="4" fill="#00A86B"/>
+          <rect x="26" y="43" width="48" height="14" rx="4" fill="#00A86B"/>
+          <circle cx="50" cy="50" r="5" fill="white"/>
+          <circle cx="50" cy="50" r="2" fill="#00A86B"/>
+        </svg>
       </div>
       <div class="app-body">
         <div class="app-cat">Application / Sante</div>
         <div class="app-name">PharmaDroid</div>
-        <div class="app-desc">Ton assistant pharmacie intelligent. Recherche de medicaments, interactions, posologies et alertes personnalisees.</div>
+        <div class="app-desc">Ta pharmacie intelligente. Scanne ton ordonnance, commande avant d'arriver, livraison a domicile par particuliers verifies, interactions medicamenteuses, rappels.</div>
         <div class="app-actions">
-          <a href="pharmadroid.html" class="btn btn-primary">▶ Ouvrir</a>
-          <a href="#" class="btn btn-outline btn-disabled">Bientot</a>
+          <a href="https://land-lang-120.github.io/pharmadroid/" class="btn btn-primary">▶ Ouvrir</a>
+          <a href="https://land-lang-120.github.io/pharmadroid/" class="btn btn-outline" onclick="installApp('PharmaDroid');return false;">Telecharger</a>
         </div>
       </div>
     </div>
