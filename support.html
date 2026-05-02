@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — CloneX Studio</title>
+<meta name="description" content="Centre d'aide CloneX Studio : nous contacter, signaler un bug, supprimer son compte, FAQ pour toutes les apps Byer, CarExpress, Tetroid, Switchr, SecretNote, DailyNote, Chrome Messenger.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f; --bg2:#12121a; --surface:#1a1a26; --border:#2a2a3a;
+  --text:#e8e8f0; --text2:#8888a0; --accent:#7c3aed; --accent2:#a855f7;
+  --accent-glow:rgba(124,58,237,.25);
+  --green:#22c55e; --orange:#f97316; --cyan:#06b6d4; --pink:#ec4899;
+  --radius:16px;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.7;
+}
+nav{
+  position:sticky; top:0; z-index:100;
+  padding:16px 24px; background:rgba(10,10,15,.85);
+  backdrop-filter:blur(20px); border-bottom:1px solid var(--border);
+  display:flex; align-items:center; justify-content:space-between;
+}
+nav .brand{
+  font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px;
+  text-decoration:none; color:var(--text);
+}
+nav .brand span{color:var(--accent)}
+nav a.back{ color:var(--text2); text-decoration:none; font-size:14px; }
+nav a.back:hover{ color:var(--accent2); }
+main{ max-width:840px; margin:0 auto; padding:48px 24px 96px; }
+h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(32px,6vw,52px); font-weight:700; line-height:1.1;
+  margin-bottom:12px; background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.subtitle{ color:var(--text2); font-size:15px; margin-bottom:48px; }
+h2{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(22px,3vw,28px); font-weight:700; margin:48px 0 16px;
+  padding-top:24px; border-top:1px solid var(--border);
+}
+h2:first-of-type{border-top:0; padding-top:0;}
+h3{ font-size:18px; font-weight:600; margin:24px 0 8px; color:var(--text); }
+p, li{ color:var(--text); font-size:15px; margin-bottom:12px; }
+ul{ padding-left:24px; margin-bottom:16px; }
+li{ margin-bottom:8px; }
+
+.contact-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:16px; margin:24px 0 32px;
+}
+.contact-card{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); padding:24px;
+  transition:transform .2s, border-color .2s;
+}
+.contact-card:hover{
+  transform:translateY(-2px); border-color:var(--accent);
+}
+.contact-card .icon{ font-size:32px; margin-bottom:12px; }
+.contact-card h3{ margin:0 0 8px; font-size:16px; }
+.contact-card p{ font-size:13px; color:var(--text2); margin:0 0 12px; }
+.contact-card a{
+  display:inline-block; padding:10px 16px; background:var(--accent);
+  color:white; border-radius:10px; text-decoration:none; font-weight:600;
+  font-size:13px; transition:background .2s;
+}
+.contact-card a:hover{ background:var(--accent2); }
+
+.faq{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); margin:12px 0; overflow:hidden; }
+.faq summary{
+  padding:16px 20px; cursor:pointer; font-weight:600; font-size:15px;
+  list-style:none; position:relative; padding-right:48px;
+}
+.faq summary::after{
+  content:"+"; position:absolute; right:20px; top:14px; font-size:24px;
+  color:var(--text2); transition:transform .2s;
+}
+.faq[open] summary::after{ transform:rotate(45deg); }
+.faq summary::-webkit-details-marker{display:none;}
+.faq[open] summary{ border-bottom:1px solid var(--border); }
+.faq .answer{ padding:16px 20px 20px; color:var(--text2); font-size:14px; line-height:1.6; }
+.faq .answer code{
+  background:var(--bg2); padding:2px 6px; border-radius:4px;
+  font-family:'Courier New', monospace; font-size:13px;
+}
+
+.callout{
+  background:var(--accent-glow); border-left:4px solid var(--accent);
+  border-radius:8px; padding:16px 20px; margin:24px 0;
+}
+.callout strong{ color:var(--text); }
+
+a{ color:var(--accent2); text-decoration:underline; }
+a:hover{ color:var(--accent); }
+
+.footer{
+  margin-top:80px; padding-top:24px; border-top:1px solid var(--border);
+  color:var(--text2); font-size:13px; text-align:center;
+}
+.footer a{ color:var(--text2); margin:0 8px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="brand">Clone<span>X</span></a>
+  <a href="/" class="back">← Retour à l'accueil</a>
+</nav>
+
+<main>
+  <h1>Centre d'aide & support</h1>
+  <p class="subtitle">
+    Nous sommes là pour vous aider. Que vous utilisiez Byer, CarExpress, Tetroid ou l'une de nos
+    autres applications, voici comment nous joindre et trouver les réponses aux questions courantes.
+  </p>
+
+  <h2>📞 Comment nous contacter</h2>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="icon">📧</div>
+      <h3>Email principal</h3>
+      <p>Réponse sous 24-48h en jours ouvrés.</p>
+      <a href="mailto:pinolando120@gmail.com">pinolando120@gmail.com</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon">🐛</div>
+      <h3>Signaler un bug</h3>
+      <p>Crash, erreur, comportement inattendu — décrivez le souci avec un screenshot si possible.</p>
+      <a href="mailto:pinolando120@gmail.com?subject=Bug%20report%20-%20Byer&body=App%20%3A%20%0AAppareil%20%3A%20%0AVersion%20%3A%20%0A%0ADescription%20du%20bug%20%3A%0A">Envoyer un rapport</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon">💡</div>
+      <h3>Suggérer une fonctionnalité</h3>
+      <p>Vos idées sont les bienvenues. Décrivez ce que vous aimeriez voir.</p>
+      <a href="mailto:pinolando120@gmail.com?subject=Suggestion%20-%20Byer">Faire une suggestion</a>
+    </div>
+  </div>
+
+  <h2>❓ Questions fréquentes</h2>
+
+  <details class="faq">
+    <summary>Comment supprimer mon compte ?</summary>
+    <div class="answer">
+      Ouvrez l'application concernée → onglet <strong>Profil</strong> → <strong>Paramètres</strong>
+      → <strong>Supprimer mon compte</strong>. La suppression est effective sous 30 jours (vos
+      données sont irrécupérables après ce délai).
+      <br/><br/>
+      Si l'option n'est pas disponible dans une app spécifique, écrivez-nous à
+      <a href="mailto:pinolando120@gmail.com?subject=Suppression%20de%20compte">pinolando120@gmail.com</a>
+      avec l'objet <code>Suppression de compte</code> en précisant l'app et l'e-mail du compte.
+      Nous traiterons la demande sous 7 jours ouvrés.
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>J'ai oublié mon mot de passe, que faire ?</summary>
+    <div class="answer">
+      Sur l'écran de connexion de l'application, cliquez sur <strong>« Mot de passe oublié ? »</strong>.
+      Vous recevrez un e-mail avec un lien sécurisé pour le réinitialiser. Le lien expire après 1h
+      pour des raisons de sécurité.
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Quelle est la commission Byer sur les locations ?</summary>
+    <div class="answer">
+      Byer prélève <strong>2,5% de commission</strong> sur chaque réservation. Le bailleur reçoit
+      donc 97,5% du montant payé par le locataire. Les frais Notch Pay (~2-3%) sont absorbés par
+      Byer sur sa marge — ils ne sont pas répercutés sur le bailleur ni sur le locataire.
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Quand serai-je payé en tant que bailleur ?</summary>
+    <div class="answer">
+      Les reversements sont automatisés. Pour chaque réservation payée :
+      <ul>
+        <li>Le séjour se déroule normalement.</li>
+        <li>24 heures après la fin (checkout), votre paiement devient éligible.</li>
+        <li>Le système le traite automatiquement dans les 4 heures suivantes (toutes les nuits + 4h, 8h, 12h, 16h, 20h UTC).</li>
+        <li>Vous recevez le montant directement sur votre numéro MTN MoMo ou Orange Money configuré dans votre profil.</li>
+        <li>Une notification "Vous avez reçu X FCFA" apparaît dans l'app.</li>
+      </ul>
+      Aucune intervention manuelle n'est nécessaire de votre côté.
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Pourquoi mon paiement échoue-t-il sur Notch Pay ?</summary>
+    <div class="answer">
+      Vérifiez que :
+      <ul>
+        <li>Votre numéro MTN MoMo / Orange Money est valide et a un solde suffisant.</li>
+        <li>Vous avez bien validé l'OTP / code USSD reçu par SMS.</li>
+        <li>Votre numéro n'est pas bloqué par votre opérateur.</li>
+      </ul>
+      Si le souci persiste après plusieurs tentatives, contactez-nous avec la référence du paiement
+      (visible dans l'app : Profil → Historique des paiements).
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Mes photos d'annonce ne se chargent pas, que faire ?</summary>
+    <div class="answer">
+      Vérifiez :
+      <ul>
+        <li>Votre connexion Internet (Wi-Fi ou 4G).</li>
+        <li>La taille des photos : maximum 5 Mo par photo, 10 photos par annonce.</li>
+        <li>Le format : JPEG ou PNG uniquement.</li>
+      </ul>
+      Si le problème persiste, fermez complètement l'app et rouvrez-la. Si toujours pas, contactez-nous.
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Puis-je modifier mes infos de paiement (numéro MoMo / OM) ?</summary>
+    <div class="answer">
+      Oui. Allez dans <strong>Profil</strong> → <strong>Paramètres</strong> → <strong>Méthode de paiement</strong>.
+      Vous pouvez changer la méthode (MTN MoMo ↔ Orange Money), le numéro et le nom inscrit sur le compte.
+      Les modifications s'appliquent aux prochains paiements (les paiements déjà en cours utilisent
+      les anciennes coordonnées par sécurité).
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Comment est protégée ma vie privée ?</summary>
+    <div class="answer">
+      Voir notre <a href="/privacy">Politique de confidentialité</a> détaillée.
+      <br/><br/>
+      En résumé : nous collectons le minimum nécessaire, nous ne revendons rien, vos données sont
+      hébergées chez Supabase (Europe) et Cloudflare. Vous pouvez supprimer votre compte à tout moment.
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>L'application est-elle disponible sur iOS ?</summary>
+    <div class="answer">
+      Pas encore. Nous lançons d'abord sur Google Play (Android), puis sur l'App Store dans une seconde phase.
+      Vous pouvez en attendant utiliser la version web depuis votre iPhone : visitez l'URL de l'app
+      avec Safari et ajoutez-la à l'écran d'accueil pour une expérience presque native.
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Y a-t-il un service client téléphonique ?</summary>
+    <div class="answer">
+      Pas encore — nous fonctionnons exclusivement par e-mail pour l'instant. C'est plus efficace
+      pour traiter les demandes techniques et garder une trace écrite. Nous répondons sous 24-48h
+      en jours ouvrés.
+    </div>
+  </details>
+
+  <h2>🚨 Urgence ou litige</h2>
+  <div class="callout">
+    <strong>En cas de litige sur une réservation</strong> (locataire absent, dégradations, paiement non reçu…),
+    contactez-nous <strong>immédiatement</strong> avec la référence de réservation
+    (BYR-XXXXXX) et un descriptif détaillé. Nous gelons le payout du bailleur le temps de l'investigation
+    (sous 7 jours). Aucune perte de fonds.
+  </div>
+
+  <h2>📚 Liens utiles</h2>
+  <ul>
+    <li><a href="/">Page d'accueil CloneX Studio</a></li>
+    <li><a href="/byer.html">Découvrir Byer</a></li>
+    <li><a href="/privacy">Politique de confidentialité</a></li>
+    <li>État du service : <a href="https://byer.landonjouajosephpino.workers.dev">https://byer.landonjouajosephpino.workers.dev</a></li>
+  </ul>
+
+  <div class="footer">
+    © 2026 CloneX Studio · Tous droits réservés ·
+    <a href="/">Accueil</a> ·
+    <a href="/support">Support</a> ·
+    <a href="/privacy">Confidentialité</a>
+  </div>
+</main>
+
+</body>
+</html>
