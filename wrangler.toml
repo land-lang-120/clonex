@@ -1,0 +1,9 @@
+# Cloudflare Workers config — sert clonex.landonjouajosephpino.workers.dev
+# en mode "Static Assets" (pas de code serveur, juste des fichiers statiques).
+
+name = "clonex"
+compatibility_date = "2026-05-03"
+
+[assets]
+directory = "./"
+not_found_handling = "404-page"

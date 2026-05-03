@@ -1,4 +1,27 @@
-/index.html
+# Cloudflare Pages — politique de Content-Type par type de fichier
+
+# Les pages HTML
+/*.html
   Content-Type: text/html; charset=UTF-8
-/*
-  Content-Type: text/html; charset=UTF-8
+
+# APK (Android packages) — Content-Type officiel pour que le browser
+# déclenche le téléchargement au lieu d'afficher du texte gibberish
+/downloads/*.apk
+  Content-Type: application/vnd.android.package-archive
+  Content-Disposition: attachment
+
+# Style + script (au cas où on en ajoute)
+/*.css
+  Content-Type: text/css; charset=UTF-8
+/*.js
+  Content-Type: application/javascript; charset=UTF-8
+
+# Images SVG (icônes)
+/*.svg
+  Content-Type: image/svg+xml
+
+# JSON (manifest, assetlinks)
+/*.json
+  Content-Type: application/json
+/.well-known/*
+  Content-Type: application/json

@@ -1,0 +1,18 @@
+# Fichiers à ne PAS uploader publiquement sur Cloudflare
+node_modules
+.wrangler
+.git
+.github
+.claude
+.vscode
+.idea
+*.log
+.DS_Store
+
+# Doc — privée
+CAHIER-CHARGES.md
+PROGRESS.md
+README.md
+
+# Wrangler config (utilisé localement, pas besoin sur le serveur)
+wrangler.toml
